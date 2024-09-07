@@ -58,8 +58,8 @@ class CalcController(QObject):
 
     @argument.setter
     def argument(self, value: int) -> None:
-        self._arg = value
-        self.accum_changed.emit(value)
+        self._arg = int(value)
+        self.accum_changed.emit(int(value))
 
     @pyqtSlot(name="set_memory", result=int)
     def set_memory(self) -> int:
